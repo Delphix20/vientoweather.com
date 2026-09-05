@@ -1,0 +1,21 @@
+{
+  "name": "Viento",
+  "short_name": "Viento",
+  "description": "Weather, refined to what matters.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080a0c",
+  "theme_color": "#080a0c",
+  "icons": [
+    {
+      "src": "/images/optimized/viento-icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/optimized/viento-icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
