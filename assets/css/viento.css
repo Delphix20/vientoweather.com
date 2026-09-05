@@ -155,6 +155,7 @@ h3 { font-size: 19px; }
 .download-icon { margin: 0 auto 28px; border-radius: 20%; }
 .download-section h2 { font-size: 52px; }
 .download-section .store-link { margin-top: 32px; }
+.download-section .store-link img { width: 135px; height: 45px; }
 .download-section .small-note { margin-top: 24px; }
 .footer { border-top: 1px solid var(--line); padding: 34px 0 26px; }
 .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
