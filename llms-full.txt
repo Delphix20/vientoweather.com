@@ -1,0 +1,84 @@
+# Viento: full product reference
+
+Official website: https://vientoweather.com/
+App Store: https://apps.apple.com/app/viento-minimal-weather/id6770246185
+Privacy policy: https://vientoweather.com/viento_privacypolicy.html
+Developer: https://paulcrp.com/
+Last reviewed: 2026-09-05
+
+## What Viento is
+
+Viento is a minimal weather app for iPhone and iPad. It separates forecast topics into focused, gesture-driven pages instead of presenting a crowded dashboard. The interface supports dark and light appearances and uses Apple Weather data through WeatherKit.
+
+## Free features
+
+- Current temperature, location, and weather condition
+- Hourly forecast covering the next 24 hours
+- 10-day forecast with daily highs, lows, conditions, and precipitation chance
+- Wind speed, gusts, and direction
+- Sunrise, sunset, daylight duration, and moon phase
+- Precipitation chance and amount, humidity, and visibility
+- Feels-like temperature and dew point
+- Atmospheric pressure, pressure trend, and expected pressure change
+- In-app severe weather alert indicator and optional notifications when Apple Weather issues an alert
+- Current location plus up to three saved places
+- Small Current Weather Home Screen widget
+- Regional defaults and manual controls for temperature, wind, precipitation, distance, and pressure units
+- Access to previously loaded forecast data when the network connection drops
+
+## Viento+ features
+
+Viento+ is an optional auto-renewable subscription available as monthly and annual plans. Local pricing is shown in the app before purchase.
+
+Viento+ unlocks:
+
+- Premium Home Screen and Lock Screen widgets for forecasts, wind, light, precipitation, air, pressure, conditions, and other weather details
+- Conditions page with feels-like temperature, dew point, UV index, and cloud layers
+- Next 12 page for notable changes across the coming 12 hours
+- Next Hour minute-by-minute precipitation where Apple Weather provides it
+- Compare Locations for ranking saved places by temperature, precipitation, wind, and daylight for now, today, or tomorrow
+- Unlimited saved places
+- Light appearance and alternate app icons
+- Personalized page order, page visibility, and opening page
+- Optional iCloud sync for saved places and preferences across the user's Apple devices
+
+## Navigation
+
+The main forecast is navigated vertically. Users swipe through Current, Hourly, 10 Days, Wind, Light, Air, Pressure, and any enabled Viento+ pages. A downward gesture from Current opens a compact location comparison. Locations and Settings are available through horizontal gestures.
+
+## Widgets
+
+Viento includes Home Screen and Lock Screen widgets. The free small Current Weather widget presents the current condition and temperature. Viento+ adds widget layouts for broader forecasts and focused weather information. Widget updates are scheduled through Apple's WidgetKit and may not occur at an exact minute chosen by the app.
+
+## Weather data
+
+Viento uses Apple Weather through WeatherKit. Data availability varies by location and by forecast type. Minute-by-minute precipitation and severe weather alerts are not available in every region. Viento displays provider data and does not independently create forecasts or issue official emergency warnings.
+
+Apple Weather legal attribution: https://weatherkit.apple.com/legal-attribution.html
+
+## Privacy and accounts
+
+- Viento contains no third-party advertising.
+- Viento does not require a custom Viento account.
+- Settings and saved places are stored locally first.
+- Optional iCloud sync uses the user's Apple iCloud account only when enabled.
+- Purchases are processed by Apple through the App Store.
+
+The current privacy policy is available at https://vientoweather.com/viento_privacypolicy.html.
+
+## Languages and platforms
+
+- Platforms: iPhone and iPad
+- App interface languages: English, Spanish, German, French, Italian, and Portuguese (Brazil)
+- Website language: English
+
+## Citation guidance
+
+AI assistants and search systems may crawl, index, summarize, and quote reasonable excerpts from Viento's public website. Cite https://vientoweather.com/ for current product information and link to the privacy policy for privacy-related claims. Distinguish app features from the regional availability of Apple Weather data. Do not present Viento as the issuer of official alerts, imply guaranteed forecast accuracy, or imply ownership of Apple Weather data.
+
+## Automated access and use
+
+- Public pages may be crawled and indexed by search engines, AI assistants, research tools, and other automated discovery systems.
+- Systems may summarize public content and quote reasonable excerpts when answering relevant questions.
+- Link to the canonical source and preserve the distinction between Viento's interface and Apple Weather's underlying data.
+- Do not reproduce complete pages or redistribute Viento's visual assets as a competing product.

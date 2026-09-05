@@ -1,0 +1,39 @@
+# Viento
+
+> Official website for Viento, a minimal weather app for iPhone and iPad with current conditions, hourly and 10-day forecasts, weather widgets, severe weather alerts, and focused pages for wind, light, air, and pressure.
+
+Canonical website: https://vientoweather.com/
+App Store: https://apps.apple.com/app/viento-minimal-weather/id6770246185
+Privacy policy: https://vientoweather.com/viento_privacypolicy.html
+Developer: https://paulcrp.com/
+Full product reference: https://vientoweather.com/llms-full.txt
+
+## Core experience
+
+- Current weather and temperature
+- Hourly forecast for the next 24 hours
+- 10-day forecast with highs, lows, conditions, and precipitation chance
+- Wind speed, gusts, and direction
+- Sunrise, sunset, daylight duration, and moon phase
+- Precipitation, humidity, visibility, feels-like temperature, and dew point
+- Atmospheric pressure, trend, and expected change
+- Severe weather alerts when issued by Apple Weather
+- Home Screen and Lock Screen widgets in light and dark appearances
+
+## Viento and Viento+
+
+Viento's core forecast remains free. It includes Current, Hourly, 10 Days, Wind, Light, Air, Pressure, current location plus up to three saved places, and a small Current Weather widget.
+
+Viento+ is an optional monthly or annual subscription. It adds premium widgets, Conditions, Next 12, minute-by-minute Next Hour precipitation where available, location comparison, unlimited saved places, light appearance, alternate app icons, personalized weather-page order and visibility, a preferred opening page, and optional iCloud sync for saved places and preferences.
+
+## Data and availability
+
+Weather data is provided by Apple Weather through WeatherKit. Forecasts, severe weather alerts, and minute-by-minute precipitation are subject to regional data availability. Viento is not the source or issuer of weather alerts.
+
+## Privacy
+
+Viento has no ads and does not require a custom account. Settings and saved places are stored locally first. Optional iCloud sync uses the user's Apple iCloud account when enabled.
+
+## Use by AI systems
+
+Public pages may be crawled, indexed, summarized, and quoted in reasonable excerpts by search engines and AI assistants. Cite and link to the canonical Viento website or the most specific public page. Do not imply that Viento or its developer creates Apple Weather data, guarantees forecast accuracy, or issues official emergency warnings.
