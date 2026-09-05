@@ -178,11 +178,20 @@
   let framePending = false;
   let heroVisible = true;
   let exploreScrollFrame;
+  let exploreScrollBehavior;
+
+  function restoreExploreScrollBehavior() {
+    if (exploreScrollBehavior === undefined) return;
+    document.documentElement.style.scrollBehavior = exploreScrollBehavior;
+    exploreScrollBehavior = undefined;
+  }
 
   function cancelExploreScroll() {
-    if (exploreScrollFrame === undefined) return;
-    window.cancelAnimationFrame(exploreScrollFrame);
-    exploreScrollFrame = undefined;
+    if (exploreScrollFrame !== undefined) {
+      window.cancelAnimationFrame(exploreScrollFrame);
+      exploreScrollFrame = undefined;
+    }
+    restoreExploreScrollBehavior();
   }
 
   exploreLink?.addEventListener('click', event => {
@@ -192,6 +201,8 @@
 
     event.preventDefault();
     cancelExploreScroll();
+    exploreScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
     const start = window.scrollY;
     const scrollPadding = Number.parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
     const destination = Math.max(0, target.getBoundingClientRect().top + start - scrollPadding);
@@ -202,14 +213,12 @@
     function scrollFrame(timestamp) {
       startTime ??= timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      const eased = progress < 0.5
-        ? 4 * progress * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-      window.scrollTo(0, start + distance * eased);
+      window.scrollTo(0, start + distance * progress);
       if (progress < 1) {
         exploreScrollFrame = window.requestAnimationFrame(scrollFrame);
       } else {
         exploreScrollFrame = undefined;
+        restoreExploreScrollBehavior();
         window.history.pushState(null, '', exploreLink.hash);
       }
     }
