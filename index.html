@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Viento | Minimal weather for iPhone &amp; iPad</title>
-    <meta name="description" content="Weather, refined to what matters. Discover Viento: a minimal weather app for iPhone and iPad, with hourly and 10-day forecasts, beautiful widgets, and Apple Weather data." />
+    <title>Viento | Minimal Weather App &amp; Widgets for iPhone &amp; iPad</title>
+    <meta name="description" content="Meet Viento, a minimal weather app for iPhone and iPad. Explore hourly and 10-day forecasts, Home and Lock Screen widgets, and Apple Weather alerts. No ads." />
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="theme-color" content="#080a0c" />
     <meta name="apple-itunes-app" content="app-id=6770246185" />
@@ -33,18 +33,51 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
+        "@type": "MobileApplication",
         "@id": "https://vientoweather.com/#app",
         "name": "Viento",
         "url": "https://vientoweather.com/",
         "description": "A minimal weather app for iPhone and iPad with hourly and 10-day forecasts, widgets, and Apple Weather data. Free to download with optional Viento+ subscriptions.",
         "image": "https://vientoweather.com/images/optimized/viento-icon-256.png?v=20260901-2",
         "operatingSystem": "iOS 18.0 or later, iPadOS 18.0 or later",
-        "applicationCategory": "WeatherApplication",
+        "applicationCategory": "UtilitiesApplication",
+        "applicationSubCategory": "Weather",
+        "availableOnDevice": ["iPhone", "iPad"],
         "inLanguage": ["en", "es", "de", "fr", "it", "pt-BR"],
         "downloadUrl": "https://apps.apple.com/app/viento-minimal-weather/id6770246185",
+        "sameAs": "https://apps.apple.com/app/viento-minimal-weather/id6770246185",
+        "mainEntityOfPage": {"@id": "https://vientoweather.com/#webpage"},
+        "screenshot": [
+          "https://vientoweather.com/images/viento/current-800.webp",
+          "https://vientoweather.com/images/viento/daily-dark-800.webp",
+          "https://vientoweather.com/images/viento/widget-forecast-1000.webp"
+        ],
         "author": {"@type": "Person", "name": "Paul Crapatureanu", "url": "https://paulcrp.com/"},
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free download. Optional monthly and annual Viento+ subscriptions."}
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://vientoweather.com/#website",
+            "url": "https://vientoweather.com/",
+            "name": "Viento",
+            "alternateName": "Viento Weather",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://vientoweather.com/#webpage",
+            "url": "https://vientoweather.com/",
+            "name": "Viento | Minimal Weather App & Widgets for iPhone & iPad",
+            "isPartOf": {"@id": "https://vientoweather.com/#website"},
+            "mainEntity": {"@id": "https://vientoweather.com/#app"},
+            "inLanguage": "en"
+          }
+        ]
       }
     </script>
   </head>
