@@ -73,10 +73,10 @@ h3 { font-size: 19px; }
 .hero h1 { font-size: 104px; font-weight: 200; line-height: 1.1; }
 .hero-tagline { font-size: 24px; font-weight: 400; margin: 12px auto 21px; text-wrap: balance; }
 .hero-note { font-size: 11px; color: var(--secondary); margin-top: 9px; }
-.hero-weather-attribution { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; transition: color .2s ease; }
-.hero-weather-attribution img { width: 8px; height: 10px; opacity: .7; }
-.hero-weather-attribution:hover { color: var(--text); }
-.hero-weather-attribution:hover img { opacity: 1; }
+.apple-weather-attribution { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; transition: color .2s ease; }
+.apple-weather-attribution img { width: 8px; height: 10px; opacity: .7; }
+.apple-weather-attribution:hover { color: var(--text); }
+.apple-weather-attribution:hover img { opacity: 1; }
 .hero-devices { display: flex; justify-content: center; align-items: flex-end; gap: 30px; height: min(390px, 43svh); margin: 32px auto 0; }
 .phone { position: relative; aspect-ratio: 1350 / 2760; flex-shrink: 0; }
 .phone-screen { position: absolute; left: 4.3764%; top: 2.0319%; width: 91.2472%; height: 95.9362%; object-fit: cover; border-radius: 15.83% / 7.3645%; }
@@ -241,7 +241,6 @@ h3 { font-size: 19px; }
   .hero-devices { height: min(340px, 40svh); gap: 15px; margin-top: 30px; }
   .hero-phone-side { height: 80%; }
   .essentials-inner { flex-wrap: wrap; justify-content: center; padding-block: 18px; gap: 6px 20px; font-size: 11px; }
-  .essentials-inner span:last-child { display: none; }
   h2 { font-size: 36px; }
   .section-description { font-size: 15px; margin-top: 22px; }
   .eyebrow { font-size: 12px; margin-bottom: 18px; }
