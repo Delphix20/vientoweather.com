@@ -2,6 +2,7 @@
 
 - App and widget images: approved English US marketing screenshots, September 3, 2026, from `Viento Photos/Screenshots/iPhone/v1.1/English US`. These are illustrative forecast data, not live weather.
 - App icon: `Viento Photos/Icon Composer Sources/VientoAppIcon-Dark.png`.
+- Footer wind mark: `Viento Photos/Icon Composer Sources/VientoWindThin.svg`, cropped through its viewBox without changing the approved artwork.
 - Silver iPhone frame: the original transparent image in the Viento App Store Figma file, node `48:2`. The screenshot placement matches that file. No App Store slides were changed.
 - App Store badge: Apple's official `https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg`.
 - Footer Apple symbol: the unchanged Apple silhouette paths from that official badge, with a standalone viewBox for cross-platform rendering.
