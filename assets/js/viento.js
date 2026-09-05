@@ -174,59 +174,61 @@
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hero = document.querySelector('.hero');
   const devices = document.querySelector('.hero-devices');
-  const exploreLink = document.querySelector('.hero-explore');
+  const animatedScrollLinks = document.querySelectorAll('.hero-explore, .navigation-links a[href^="#"]');
   let framePending = false;
   let heroVisible = true;
-  let exploreScrollFrame;
-  let exploreScrollBehavior;
+  let anchorScrollFrame;
+  let anchorScrollBehavior;
 
-  function restoreExploreScrollBehavior() {
-    if (exploreScrollBehavior === undefined) return;
-    document.documentElement.style.scrollBehavior = exploreScrollBehavior;
-    exploreScrollBehavior = undefined;
+  function restoreAnchorScrollBehavior() {
+    if (anchorScrollBehavior === undefined) return;
+    document.documentElement.style.scrollBehavior = anchorScrollBehavior;
+    anchorScrollBehavior = undefined;
   }
 
-  function cancelExploreScroll() {
-    if (exploreScrollFrame !== undefined) {
-      window.cancelAnimationFrame(exploreScrollFrame);
-      exploreScrollFrame = undefined;
+  function cancelAnchorScroll() {
+    if (anchorScrollFrame !== undefined) {
+      window.cancelAnimationFrame(anchorScrollFrame);
+      anchorScrollFrame = undefined;
     }
-    restoreExploreScrollBehavior();
+    restoreAnchorScrollBehavior();
   }
 
-  exploreLink?.addEventListener('click', event => {
-    if (motionPreference.matches) return;
-    const target = document.querySelector(exploreLink.hash);
-    if (!target) return;
+  animatedScrollLinks.forEach(link => {
+    link.addEventListener('click', event => {
+      if (motionPreference.matches) return;
+      const target = document.querySelector(link.hash);
+      if (!target) return;
 
-    event.preventDefault();
-    cancelExploreScroll();
-    exploreScrollBehavior = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-    const start = window.scrollY;
-    const scrollPadding = Number.parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
-    const destination = Math.max(0, target.getBoundingClientRect().top + start - scrollPadding);
-    const distance = destination - start;
-    const duration = 1200;
-    let startTime;
+      event.preventDefault();
+      cancelAnchorScroll();
+      anchorScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      const start = window.scrollY;
+      const scrollPadding = Number.parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const destination = Math.max(0, target.getBoundingClientRect().top + start - scrollPadding);
+      const distance = destination - start;
+      const duration = 1200;
+      let startTime;
 
-    function scrollFrame(timestamp) {
-      startTime ??= timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      window.scrollTo(0, start + distance * progress);
-      if (progress < 1) {
-        exploreScrollFrame = window.requestAnimationFrame(scrollFrame);
-      } else {
-        exploreScrollFrame = undefined;
-        restoreExploreScrollBehavior();
-        window.history.pushState(null, '', exploreLink.hash);
+      function scrollFrame(timestamp) {
+        startTime ??= timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        window.scrollTo(0, start + distance * progress);
+        if (progress < 1) {
+          anchorScrollFrame = window.requestAnimationFrame(scrollFrame);
+        } else {
+          anchorScrollFrame = undefined;
+          restoreAnchorScrollBehavior();
+          window.history.pushState(null, '', link.hash);
+        }
       }
-    }
 
-    exploreScrollFrame = window.requestAnimationFrame(scrollFrame);
+      anchorScrollFrame = window.requestAnimationFrame(scrollFrame);
+    });
   });
-  window.addEventListener('wheel', cancelExploreScroll, { passive: true });
-  window.addEventListener('touchstart', cancelExploreScroll, { passive: true });
+  window.addEventListener('wheel', cancelAnchorScroll, { passive: true });
+  window.addEventListener('touchstart', cancelAnchorScroll, { passive: true });
 
   function updateDepth() {
     framePending = false;
