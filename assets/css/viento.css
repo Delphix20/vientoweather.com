@@ -66,6 +66,7 @@ h3 { font-size: 19px; }
 .store-link:hover { opacity: .8; }
 .store-link img { width: 150px; height: 50px; }
 .navigation .store-link { flex-shrink: 0; line-height: 0; }
+.navigation .store-link img { width: 135px; height: 45px; }
 
 .hero { padding: 36px 24px 24px; text-align: center; overflow: hidden; }
 .hero-copy .eyebrow { margin: 0 0 8px; font-size: 12px; }

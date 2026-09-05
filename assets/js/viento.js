@@ -174,8 +174,50 @@
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hero = document.querySelector('.hero');
   const devices = document.querySelector('.hero-devices');
+  const exploreLink = document.querySelector('.hero-explore');
   let framePending = false;
   let heroVisible = true;
+  let exploreScrollFrame;
+
+  function cancelExploreScroll() {
+    if (exploreScrollFrame === undefined) return;
+    window.cancelAnimationFrame(exploreScrollFrame);
+    exploreScrollFrame = undefined;
+  }
+
+  exploreLink?.addEventListener('click', event => {
+    if (motionPreference.matches) return;
+    const target = document.querySelector(exploreLink.hash);
+    if (!target) return;
+
+    event.preventDefault();
+    cancelExploreScroll();
+    const start = window.scrollY;
+    const scrollPadding = Number.parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    const destination = Math.max(0, target.getBoundingClientRect().top + start - scrollPadding);
+    const distance = destination - start;
+    const duration = 1200;
+    let startTime;
+
+    function scrollFrame(timestamp) {
+      startTime ??= timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      window.scrollTo(0, start + distance * eased);
+      if (progress < 1) {
+        exploreScrollFrame = window.requestAnimationFrame(scrollFrame);
+      } else {
+        exploreScrollFrame = undefined;
+        window.history.pushState(null, '', exploreLink.hash);
+      }
+    }
+
+    exploreScrollFrame = window.requestAnimationFrame(scrollFrame);
+  });
+  window.addEventListener('wheel', cancelExploreScroll, { passive: true });
+  window.addEventListener('touchstart', cancelExploreScroll, { passive: true });
 
   function updateDepth() {
     framePending = false;
